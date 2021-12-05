@@ -1,4 +1,4 @@
-from typing import Any, Callable, List
+from typing import Callable, List
 
 
 def parse_draws() -> List[int]:
