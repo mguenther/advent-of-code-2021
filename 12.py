@@ -1,21 +1,21 @@
 from collections import defaultdict, deque
+from typing import Dict, List
 
 
-def to_adjacency_list(filename = '12.in'):
+def to_adjacency_list(filename: str = '12.in') -> Dict[str, List[str]]:
     E = defaultdict(list)
     connections = [connection.strip().split('-') for connection in open('12.in', 'r')]
-    for line in connections:
-        l, r = line
+    for (l, r) in connections:
         E[l].append(r)
         E[r].append(l)
     return E
 
 
-def is_small_cave(node):
+def is_small_cave(node: str) -> bool:
     return node.lower() == node
 
 
-def number_of_possible_paths():
+def number_of_possible_paths() -> int:
     E = to_adjacency_list()
     Q = deque([('start', set(['start']))])
     possible_paths = 0
@@ -32,7 +32,7 @@ def number_of_possible_paths():
     return possible_paths
 
 
-def number_of_possible_paths_relaxed():
+def number_of_possible_paths_relaxed() -> int:
     E = to_adjacency_list()
     Q = deque([('start', set(['start']), None)])
     possible_paths = 0
