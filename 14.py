@@ -38,5 +38,6 @@ def polymer_strength_after(steps: int) -> int:
     
     return max(counter_elements.values()) - min(counter_elements.values())
 
+
 print(polymer_strength_after(10))
 print(polymer_strength_after(40))
