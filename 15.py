@@ -31,8 +31,10 @@ def shortest(G: List[List[int]], start: tuple[int, int], target: tuple[int, int]
         
         distance, node = Q.get()
         
-        if node == target: return distance
-        if distances[node] < distance: continue
+        if node == target:
+            return distance
+        if distances[node] < distance:
+             continue
 
         for (n_i, n_j) in neighbours(node, len(G)):
             n_distance = distance + G[n_i][n_j]
@@ -41,7 +43,7 @@ def shortest(G: List[List[int]], start: tuple[int, int], target: tuple[int, int]
                 Q.put((n_distance, (n_i, n_j)))
 
 
-# Given the poor description of the problem and sample input (15.dp.py) I lost
+# Given the poor description of the problem and sample input (see 15.dp.py) I lost
 # interest at this point and 'borrowed' the graph extension algorithm from
 # reddit (user: mapleoctopus621).
 def extend(G: List[List[int]], times: int = 5) -> List[List[int]]:
@@ -50,7 +52,7 @@ def extend(G: List[List[int]], times: int = 5) -> List[List[int]]:
     for _ in range(times):
         row = np.concatenate(tuple((G_initial + i) % 9 for i in range(times)), axis = 1)
         G_extended = np.concatenate((G_extended, row), axis = 0)
-        G_initial = (G_initial + 1)%9
+        G_initial = (G_initial + 1) % 9
     G_extended += 1
     return G_extended
 
