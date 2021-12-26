@@ -1,9 +1,9 @@
-# came up with the idea of fingerprinting based on the distance to neighbours
+# I came up with the idea of fingerprinting based on the distance to neighbours
 # and factoring in rotations and what not, but then came across this solution
 # https://github.com/jimcasey/home/blob/master/projects/advent-of-code/2021/19/part1.py
 # (which could also inspired by another solution, cf. https://bit.ly/3yOF591)
 # and figured that I can optimize heavily by simplyifing the fingerprinting method
-# to only take the closest two neighbours of a beacon into account. this marvelously
+# to only take the closest two neighbours of a beacon into account. This marvelously
 # works without taking convolutions into consideration (this suggests though that
 # the following algorithm is not a general solution, but works given the problem
 # input).
